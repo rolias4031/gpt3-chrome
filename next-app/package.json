@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.11",
+    "autoprefixer": "^10.4.12",
+    "eslint-config-prettier": "^8.5.0",
     "next": "latest",
+    "postcss": "^8.4.16",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-query": "^3.39.2",
+    "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
-    "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint": "^8.24.0",
+    "eslint-config-next": "latest",
+    "eslint-plugin-react": "^7.31.8"
   }
 }
