@@ -1,9 +1,10 @@
 import React from 'react';
 
-function InterfaceActionButtons() {
+function InterfaceActionButtons({ raiseState }) {
   return (
     <>
       <button
+        onClick={() => raiseState('')}
         className="btn text-gray-200 bg-gray-400 active:bg-gray-800 rounded mx-2"
         type="button"
       >

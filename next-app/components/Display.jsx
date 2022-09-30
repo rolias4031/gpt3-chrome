@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+/*
+* THIS COMPONENT:
+1. conditionally renders the response as either: IsLoading, IsError, or Response depending on the payload passed from Interface.
+2. formats the response using formatResponse, to preserve text structure
+*/
 
-function Display({ contState }) {
+function Display({ response }) {
   function formatResponse(text) {
     const textArray = text.split('\n');
-    console.log(textArray);
     return textArray.map((text, i) => {
       if (!text) return;
       return (
@@ -14,16 +18,15 @@ function Display({ contState }) {
       );
     });
   }
-  const formatted = formatResponse(contState);
-  return <div className="text-white text-xs">{formatted}</div>;
-}
 
+  return <div className="text-white text-xs">{formatResponse(response)}</div>;
+}
 Display.propTypes = {
-  contState: PropTypes.string,
+  response: PropTypes.string,
 };
 
 Display.defaultProps = {
-  contState: null,
+  response: null,
 };
 
 export default Display;

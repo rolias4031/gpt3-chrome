@@ -20,7 +20,9 @@ async function fetchMakeCompletion(config) {
   const result = await response.json();
   console.log(result);
   if (!response.ok) {
-    throw new Error(result.message);
+    const error = new Error();
+    error.error = result.error;
+    throw error;
   }
   return result;
 }
