@@ -1,22 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 
-function InterfaceActionButtons({ raiseState }) {
+function InterfaceActionButtons({ contState, raiseState, onClear }) {
+  function disableButton(input) {
+    if (input.length === 0) {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <button
-        onClick={() => raiseState('')}
-        className="btn text-gray-200 bg-gray-400 active:bg-gray-800 rounded mx-2"
+        onClick={() => {
+          raiseState('');
+          onClear();
+        }}
+        className="btn mx-2"
         type="button"
       >
         Clear
       </button>
-      <input
-        className="btn text-gray-200 bg-gray-400 rounded cursor-pointer active:bg-gray-800"
-        type="submit"
-        value="Send"
-      />
+      <button className="btn" type="submit" disabled={disableButton(contState)}>
+        <MagnifyingGlassIcon className="w-4 h-4" />
+      </button>
     </>
   );
 }
+
+InterfaceActionButtons.propTypes = {
+  contState: PropTypes.string.isRequired,
+  raiseState: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
+};
 
 export default InterfaceActionButtons;

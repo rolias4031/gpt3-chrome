@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 */
 
 function Display({ response }) {
+  const rawResponse = response; // use this for copy
   function formatResponse(text) {
     const textArray = text.split('\n');
     return textArray.map((text, i) => {
@@ -19,7 +20,9 @@ function Display({ response }) {
     });
   }
 
-  return <div className="text-white text-xs">{formatResponse(response)}</div>;
+  return (
+    <div className="display-colors text-xs overflow-auto p-3">{formatResponse(response)}</div>
+  );
 }
 Display.propTypes = {
   response: PropTypes.string,

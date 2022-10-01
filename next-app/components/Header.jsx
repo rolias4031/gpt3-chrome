@@ -3,12 +3,12 @@ import { InformationCircleIcon } from '@heroicons/react/20/solid';
 
 function Header() {
   return (
-    <div className='flex'>
-      <p className="flex-1 text-xs text-gray-400">Pocket Law</p>
+    <>
+      <span className="flex-1 text-xs">Pocket Law</span>
       <button>
-        <InformationCircleIcon className='w-4 h-4 text-slate-400'/>
+        <InformationCircleIcon className="w-4 h-4" />
       </button>
-    </div>
+    </>
   );
 }
 

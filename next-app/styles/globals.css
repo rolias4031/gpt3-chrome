@@ -20,10 +20,48 @@ a {
 }
 
 @layer components {
-  .btn {
-    @apply px-2 py-1 text-sm
+
+  .header-style {
+    @apply bg-gray-50 text-gray-500 font-medium;
   }
+
+  .interface-form-colors {
+    @apply bg-red-100 shadow-md shadow-gray-300;
+  }
+
+  .text-input-style {
+    @apply bg-transparent border-indigo-500 border-b-2 text-sm font-medium text-gray-800;
+  }
+
+  .display-colors {
+    @apply bg-gray-100 text-gray-800;
+  }
+
+  .btn {
+    @apply px-2 py-1 text-xs font-medium text-gray-500 bg-gray-300 rounded cursor-pointer;
+  }
+
+  .btn:hover {
+    @apply bg-gray-200
+  }
+
+  .btn:active {
+    @apply bg-gray-300
+  }
+
+  .btn-copy {
+    @apply text-xs bg-gray-200 rounded-full
+  }
+
   .mode-icon {
-    @apply text-gray-300 w-6 h-6
+    @apply text-gray-300 w-6 h-6;
+  }
+
+  .mode-icon-selected {
+    @apply text-indigo-500 w-6 h-6;
+  }
+
+  .loading-icon-style {
+    @apply animate-spin-slow w-10 h-10 text-gray-800
   }
 }

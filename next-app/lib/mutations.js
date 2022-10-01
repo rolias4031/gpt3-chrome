@@ -11,7 +11,10 @@ async function fetchMakeCompletion(config) {
     body: JSON.stringify({
       model: 'text-davinci-002',
       prompt: config.prompt,
-      max_tokens: 1000,
+      max_tokens: 500,
+      temperature: 1, // default to 1
+      top_p: 1, // default to 1
+      presence_penalty: 0 // defaults to 0
     }),
   };
   // make request

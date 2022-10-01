@@ -4,36 +4,43 @@ import InterfaceActionButtons from './InterfaceActionButtons';
 import InterfaceModeButtons from './InterfaceModeButtons';
 import { presets } from '../../lib/presets';
 
-function InterfaceForm({ onSubmit }) {
-  const [mode, setMode] = useState('explain'); // explain, summarize, example
+function InterfaceForm({ onSubmit, onClear }) {
+  const [mode, setMode] = useState('explain'); // explain, summary, example
   const [textAreaInput, setTextAreaInput] = useState('');
   function submitHandler(event) {
     event.preventDefault();
+    console.log(presets[mode].createPrompt(textAreaInput));
     onSubmit({ prompt: presets[mode].createPrompt(textAreaInput) });
   }
   return (
-    <form onSubmit={submitHandler} className="w-full">
-      <div className="flex items-center pb-2 pt-2">
+    <form onSubmit={submitHandler} className="w-full p-3 interface-form-colors">
+      <div className="flex items-center justify-between pb-4">
         <div className="flex space-x-3">
-          <InterfaceModeButtons raiseState={setMode} />
+          <InterfaceModeButtons raiseState={setMode} contState={mode} />
         </div>
-        <div className="ml-auto">
-          <InterfaceActionButtons raiseState={setTextAreaInput} />
+        <div className="flex items-center">
+          <InterfaceActionButtons
+            contState={textAreaInput}
+            raiseState={setTextAreaInput}
+            onClear={onClear}
+          />
         </div>
       </div>
-      <textarea
+      {/* changes based on mode? */}
+      <input
         onChange={(event) => setTextAreaInput(event.target.value)}
-        className="border w-full h-20 p-2 text-sm rounded bg-gray-100"
         value={textAreaInput}
-        name=""
-        id=""
-      ></textarea>
+        placeholder={presets[mode].inputPlaceholder}
+        className="w-full pb-1 focus:ring-0 focus:outline-none text-input-style"
+        type="text"
+      />
     </form>
   );
 }
 
 InterfaceForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
 };
 
 export default InterfaceForm;

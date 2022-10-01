@@ -8,16 +8,17 @@ import InterfaceForm from './InterfaceForm';
 // BookOpen KeyIcon LightBulb ChatBubbleLeft Bolt
 
 function Interface() {
-  const { mutate, isLoading, isSuccess, isError, data } = useMakeCompletion();
+  const { mutate, reset, isLoading, isSuccess, isError, data } =
+    useMakeCompletion();
 
   return (
     <>
       {/* contains all form components and state for mutate */}
-      <div className='bg-gray-600 w-screen px-3 py-2'>
-        <InterfaceForm onSubmit={mutate} />
+      <div className="sticky top-0 border-2 border-black">
+        <InterfaceForm onSubmit={mutate} onClear={reset} />
       </div>
       {/* controls the display for the entire app */}
-      <div className="bg-gray-800 w-screen h-screen p-3">
+      <div className="flex flex-1 w-full h-auto overflow-auto">
         {isSuccess && <Display response={data.choices[0].text} />}
         {isLoading && <IsLoading />}
         {isError && <IsError />}
