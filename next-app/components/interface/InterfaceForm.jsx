@@ -9,7 +9,6 @@ function InterfaceForm({ onSubmit, onClear }) {
   const [textAreaInput, setTextAreaInput] = useState('');
   function submitHandler(event) {
     event.preventDefault();
-    console.log(presets[mode].createPrompt(textAreaInput));
     onSubmit({ prompt: presets[mode].createPrompt(textAreaInput) });
   }
   return (

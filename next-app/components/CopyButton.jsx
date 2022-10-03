@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ClipboardDocumentListIcon } from '@heroicons/react/20/solid';
 
-function CopyButton({ response }) {
+function CopyButton({ contState }) {
   const [copySuccess, setCopySuccess] = useState(false);
   async function copyHandler() {
-    await navigator.clipboard.writeText(response);
+    await navigator.clipboard.writeText(contState);
     setCopySuccess(() => true);
     setTimeout(() => {
       setCopySuccess(() => false);
@@ -26,7 +26,7 @@ function CopyButton({ response }) {
 }
 
 CopyButton.propTypes = {
-  response: PropTypes.string.isRequired,
+  contState: PropTypes.string.isRequired,
 };
 
 export default CopyButton;

@@ -16,7 +16,7 @@ function Interface() {
       {/* contains all form components and state for mutate */}
       <InterfaceForm onSubmit={mutate} onClear={reset} />
       {/* controls the display for the entire app */}
-      {isSuccess && <Display response={data.choices[0].text} />}
+      {isSuccess && <Display response={data.result.choices[0].text} />}
       {isLoading && <IsLoading />}
       {isError && <IsError />}
     </>

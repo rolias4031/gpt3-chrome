@@ -14,7 +14,6 @@ function InterfaceModeButtons({ raiseState, contState }) {
   };
   function changeModeHandler(event) {
     const name = event.currentTarget.name;
-    console.log(event.currentTarget, event.currentTarget.name);
     raiseState(() => name);
   }
   function renderIconStyle(mode, name) {

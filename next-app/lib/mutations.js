@@ -1,27 +1,19 @@
 import { useMutation } from 'react-query';
 
 async function fetchMakeCompletion(config) {
-  const url = 'https://api.openai.com/v1/completions';
+  const url = 'http://localhost:8080/api/completion';
   const fetchOptions = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: 'text-davinci-002',
       prompt: config.prompt,
-      max_tokens: 500,
-      temperature: 1, // default to 1
-      top_p: 1, // default to 1
-      presence_penalty: 0 // defaults to 0
     }),
   };
   // make request
   const response = await fetch(url, fetchOptions);
-  console.log(response);
   const result = await response.json();
-  console.log(result);
   if (!response.ok) {
     const error = new Error();
     error.error = result.error;
