@@ -1,7 +1,7 @@
 import { useMutation } from 'react-query';
 
 async function fetchMakeCompletion(config) {
-  const url = 'http://localhost:8080/api/completion';
+  let url = 'https://gpt3-pocket-5ycu5nboa-rolias4031.vercel.app/api/completion';
   const fetchOptions = {
     method: 'POST',
     headers: {
