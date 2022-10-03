@@ -21,28 +21,28 @@ a {
 
 @layer components {
 
+  .app-colors {
+    @apply bg-white border border-gray-200;
+  }
+
   .header-style {
-    @apply bg-gray-50 text-gray-500 font-medium;
+    @apply bg-gray-50 text-gray-600 font-medium;
   }
 
   .interface-form-colors {
-    @apply bg-red-100 shadow-md shadow-gray-300;
+    @apply bg-gray-50 shadow-md z-50 shadow-gray-300;
   }
 
   .text-input-style {
-    @apply bg-transparent border-indigo-500 border-b-2 text-sm font-medium text-gray-800;
+    @apply bg-transparent border-amber-600 border-b-2 text-sm font-medium text-gray-800;
   }
 
   .display-colors {
-    @apply bg-gray-100 text-gray-800;
+    @apply bg-white text-gray-800;
   }
 
   .btn {
-    @apply px-2 py-1 text-xs font-medium text-gray-500 bg-gray-300 rounded cursor-pointer;
-  }
-
-  .btn:hover {
-    @apply bg-gray-200
+    @apply px-2 py-1 text-sm font-medium text-gray-600 bg-gray-200 rounded cursor-pointer;
   }
 
   .btn:active {
@@ -50,18 +50,22 @@ a {
   }
 
   .btn-copy {
-    @apply text-xs bg-gray-200 rounded-full
+    @apply bg-gray-200 rounded-md;
   }
 
   .mode-icon {
-    @apply text-gray-300 w-6 h-6;
+    @apply text-gray-600 w-5 h-5;
   }
 
   .mode-icon-selected {
-    @apply text-indigo-500 w-6 h-6;
+    @apply text-amber-600 w-5 h-5;
+  }
+
+  .mode-icon-sm {
+    @apply w-4 h-4 text-gray-600
   }
 
   .loading-icon-style {
-    @apply animate-spin-slow w-10 h-10 text-gray-800
+    @apply animate-spin-slow w-10 h-10 text-gray-600
   }
 }

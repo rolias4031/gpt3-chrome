@@ -8,7 +8,13 @@ Enhance this page by specifying client or server error.
 */
 
 function IsError({ message }) {
-  return <p className='text-lg font-bold text-red-600 text-center'>{message ? message : 'Something went wrong'}</p>;
+  return (
+    <div className='my-auto text-center'>
+      <p className="text-lg font-bold text-gray-300">
+        {message ? message : 'Something went wrong'}
+      </p>
+    </div>
+  );
 }
 
 IsError.propTypes = {

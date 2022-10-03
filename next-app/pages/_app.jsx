@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="w-[300px] h-[500px] app-colors">
+      <div className="w-[300px] h-[500px] flex flex-col app-colors">
         <Component {...pageProps} />
       </div>
     </QueryClientProvider>

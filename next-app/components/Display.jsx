@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CopyButton from './CopyButton';
 /*
 * THIS COMPONENT:
 1. conditionally renders the response as either: IsLoading, IsError, or Response depending on the payload passed from Interface.
@@ -7,13 +8,12 @@ import PropTypes from 'prop-types';
 */
 
 function Display({ response }) {
-  const rawResponse = response; // use this for copy
   function formatResponse(text) {
     const textArray = text.split('\n');
     return textArray.map((text, i) => {
       if (!text) return;
       return (
-        <p key={`${text}-${i}`} className="mb-2 leading-tight">
+        <p key={`${text}-${i}`} className="text-xs mb-2 leading-tight">
           {text}
         </p>
       );
@@ -21,7 +21,12 @@ function Display({ response }) {
   }
 
   return (
-    <div className="display-colors text-xs overflow-auto p-3">{formatResponse(response)}</div>
+    <>
+      <div className="display-colors overflow-auto p-3">
+        <CopyButton contState={response}/>
+        {formatResponse(response)}
+      </div>
+    </>
   );
 }
 Display.propTypes = {

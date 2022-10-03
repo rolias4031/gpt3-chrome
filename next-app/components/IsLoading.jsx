@@ -4,7 +4,7 @@ import { Cog6ToothIcon } from '@heroicons/react/20/solid';
 
 function IsLoading({ message }) {
   return (
-    <div className='self-center w-full'>
+    <div className='items-center my-auto'>
       {message && <p className="text-sm font-semibold">{message}</p>}
       <Cog6ToothIcon className="loading-icon-style mx-auto" />
     </div>

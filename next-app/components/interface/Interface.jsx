@@ -14,15 +14,11 @@ function Interface() {
   return (
     <>
       {/* contains all form components and state for mutate */}
-      <div className="sticky top-0 border-2 border-black">
-        <InterfaceForm onSubmit={mutate} onClear={reset} />
-      </div>
+      <InterfaceForm onSubmit={mutate} onClear={reset} />
       {/* controls the display for the entire app */}
-      <div className="flex flex-1 w-full h-auto overflow-auto">
-        {isSuccess && <Display response={data.choices[0].text} />}
-        {isLoading && <IsLoading />}
-        {isError && <IsError />}
-      </div>
+      {isSuccess && <Display response={data.choices[0].text} />}
+      {isLoading && <IsLoading />}
+      {isError && <IsError />}
     </>
   );
 }

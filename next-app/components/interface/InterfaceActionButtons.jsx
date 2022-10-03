@@ -22,7 +22,7 @@ function InterfaceActionButtons({ contState, raiseState, onClear }) {
         Clear
       </button>
       <button className="btn" type="submit" disabled={disableButton(contState)}>
-        <MagnifyingGlassIcon className="w-4 h-4" />
+        <MagnifyingGlassIcon className="w-5 h-5" />
       </button>
     </>
   );
