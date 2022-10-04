@@ -62,10 +62,34 @@ a {
   }
 
   .mode-icon-sm {
-    @apply w-4 h-4 text-gray-600
+    @apply w-4 h-4 text-gray-600;
   }
 
   .loading-icon-style {
-    @apply animate-spin-slow w-10 h-10 text-gray-600
+    @apply animate-spin-slow w-10 h-10 text-gray-600;
+  }
+
+  .info-header {
+    @apply text-sm font-semibold text-gray-800 border-b border-gray-200;
+  }
+
+  .info-subheader {
+    @apply text-sm font-semibold text-amber-600
+  }
+
+  .info-icon {
+    @apply w-4 h-4 text-gray-600
+  }
+
+  .info-section-link {
+    @apply text-sm font-semibold text-gray-800 border-b-2
+  }
+
+  .info-head-container {
+    @apply flex items-center mb-1 mt-3 space-x-1
+  }
+
+  .info-body {
+    @apply text-xs text-gray-800 mb-2;
   }
 }

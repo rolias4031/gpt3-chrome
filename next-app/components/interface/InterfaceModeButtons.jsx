@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   BookOpenIcon,
   KeyIcon,
-  ListBulletIcon,
+  SwatchIcon,
 } from '@heroicons/react/20/solid';
 
 function InterfaceModeButtons({ raiseState, contState }) {
@@ -45,7 +45,7 @@ function InterfaceModeButtons({ raiseState, contState }) {
         type="button"
         name={MODES.EXAMPLE}
       >
-        <ListBulletIcon className={renderIconStyle(contState, MODES.EXAMPLE)} />
+        <SwatchIcon className={renderIconStyle(contState, MODES.EXAMPLE)} />
       </button>
       {/* lsat resort onClick={() => raiseState('mode')} */}
     </>

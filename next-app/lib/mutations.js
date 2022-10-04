@@ -1,14 +1,16 @@
 import { useMutation } from 'react-query';
 
 async function fetchMakeCompletion(config) {
-  let url = 'https://gpt3-pocket-5ycu5nboa-rolias4031.vercel.app/api/completion';
+  let url = 'https://gpt3-pocket-web.vercel.app/api/completion';
   const fetchOptions = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
+      model: 'text-davinci-002',
       prompt: config.prompt,
+      token: process.env.NEXT_PUBLIC_CHROME_TOKEN,
     }),
   };
   // make request
